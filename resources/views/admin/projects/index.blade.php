@@ -34,7 +34,7 @@
                                 <td>{{$p->preview}}</td>
                                 <td>{{$p->description}}</td>
                                 <td class="d-flex justify-content-around">
-                                    <a href="">Show</a>
+                                    <a href="{{route('admin.projects.show', ['project' => $p->id])}}"><i class="bi bi-eyeglasses"></i></a>
                                     
                                 </td>
                             </tr>
