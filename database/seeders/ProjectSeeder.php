@@ -21,7 +21,7 @@ class ProjectSeeder extends Seeder
             $new_project->name = $faker->word();
             $new_project->date_of_upload = $faker->date();
             $new_project->stack = implode(' - ', $faker->randomElements(['HTML', 'CSS', 'JS', 'EJS', 'VUE', 'VITE', 'PHP'], 3));
-            $new_project->preview = $faker->imageUrl(300, 300);
+            $new_project->preview = $faker->imageUrl(400, 300);
             $new_project->description = $faker->sentence(30);
 
             $new_project->save();
