@@ -1,19 +1,23 @@
 @import '~bootstrap/scss/bootstrap';
+body {
+    height: 100vh;
+}
 
-.nav-bar {
-    height: 75px;
+header {
+    height: 70px;
 }
 
 main {
     display: flex;
     #sidebar {
-        height: calc(100vh - 75px);
+        height: calc(100vh - 70px);
         width: 200px;
         background-color: slategray;
     }
 
     #content {
-        height: calc(100vh - 75px);
+        height: calc(100vh - 70px);
         width: calc(100vw - 200px);
+        overflow: hidden;
     }
 }
