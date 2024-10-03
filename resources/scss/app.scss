@@ -1,1 +1,19 @@
-@import '~bootstrap/scss/bootstrap'
+@import '~bootstrap/scss/bootstrap';
+
+.nav-bar {
+    height: 75px;
+}
+
+main {
+    display: flex;
+    #sidebar {
+        height: calc(100vh - 75px);
+        width: 200px;
+        background-color: slategray;
+    }
+
+    #content {
+        height: calc(100vh - 75px);
+        width: calc(100vw - 200px);
+    }
+}
