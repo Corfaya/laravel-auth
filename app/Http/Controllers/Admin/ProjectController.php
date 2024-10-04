@@ -40,7 +40,7 @@ class ProjectController extends Controller
     public function store(StoreProjectRequest $request, Project $project)
     {
         $form_data = $request->validated();
-        $form_data['slug'] = Project::generateSlug($form_data['name'], '-');
+        $form_data['slug'] = Project::generateSlug($form_data['name']);
         $project->fill($form_data);
         $project->save();
         return redirect()->route('admin.projects.index');
