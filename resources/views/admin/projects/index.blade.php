@@ -35,7 +35,7 @@
                                     <form action="{{ route('admin.projects.destroy', ['project' => $p->id])}}" method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-sm btn-danger" id="project-remove" data-c-title="{{$p->title}}"><i class="bi bi-trash-fill"></i></button>
+                                        <button type="submit" class="btn btn-sm btn-danger project-remove" data-proj="{{$p->name}}"><i class="bi bi-trash-fill"></i></button>
                                     </form>
                                 </td>
                             </tr>
@@ -45,4 +45,5 @@
             </div>
         </div>
     </div>
+    @include('admin.projects.partials.modal_del')
 @endsection
