@@ -30,12 +30,12 @@ class StoreProjectRequest extends FormRequest
         ];
     }
 
-    public function meessages() {
+    public function messages() {
         return [
             'name.required' => 'Questo campo è obbligatorio',
             'name.max' => 'Può contenere al massimo :max caratteri',
-            'name.required' => 'Questo campo è obbligatorio',
-            'name.required' => 'Questo campo è obbligatorio'
+            'date_of_upload.required' => 'Questo campo è obbligatorio',
+            'stack.required' => 'Questo campo è obbligatorio'
         ];
     }
 }
