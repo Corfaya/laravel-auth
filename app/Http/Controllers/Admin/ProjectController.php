@@ -37,7 +37,7 @@ class ProjectController extends Controller
      */
     public function store(Request $request, Project $project)
     {
-        $form_data = $request->all();
+        $form_data = $request->validated();
         $project->fill($form_data);
         $project->save();
         return redirect()->route('admin.projects.index');
@@ -75,9 +75,8 @@ class ProjectController extends Controller
      */
     public function update(Request $request, Project $project)
     {
-        $form_data = $request->all();
-        $project->fill($form_data);
-        $project->update();
+        $form_data = $request->validated();
+        $project->update($form_data);
 
         return redirect()->route('admin.projects.show', compact('project'));
     }
