@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="http://www.yoursite.com/favicon.ico?v=<?php echo time() ?>" />
     <title>Laravel auth</title>
     @vite(['resources/js/app.js'])
 </head>

@@ -67,6 +67,9 @@ main {
             .home-p {
                 a {
                     color: $text-titles;
+                    &:hover {
+                        color: $olive;
+                    }
                 }
             }
         }

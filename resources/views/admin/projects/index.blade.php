@@ -24,11 +24,14 @@
                     <tbody>
                         @foreach ($projects as $p)
                             <tr>
-                                <td>{{$p->id}}</td>
-                                <td class="text-capitalize">{{$p->name}}</td>
-                                <td>{{$p->date_of_upload}}</td>
+                                <td class="fw-bold">{{$p->id}}</td>
+                                <td class="text-capitalize fst-italic">{{$p->name}}</td>
+                                <td>{{date('M d Y', strtotime($p->date_of_upload))}}</td>
                                 <td class="d-flex align-items-center">
-                                    <a href="{{route('admin.projects.show', ['project' => $p->id])}}" class="text-decoration-none  btn btn-sm btn-primary"><i class="bi bi-eyeglasses"></i></a>   
+                                    <a href="{{route('admin.projects.show', ['project' => $p->id])}}" class="btn btn-sm btn-primary"><i class="bi bi-eyeglasses"></i></a>   
+                                    <a href="{{route('admin.projects.edit', ['project' => $p->id])}}" class="btn btn-sm btn-warning mx-2">
+                                        <i class="bi bi-pencil"></i>
+                                    </a>
                                 </td>
                             </tr>
                         @endforeach
