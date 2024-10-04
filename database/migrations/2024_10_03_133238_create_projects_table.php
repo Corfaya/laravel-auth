@@ -20,6 +20,7 @@ return new class extends Migration
             $table->text('stack');
             $table->string('preview')->nullable();
             $table->text('description')->nullable();
+            $table->string('slug');
             $table->timestamps();
         });
     }
