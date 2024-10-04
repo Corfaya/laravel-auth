@@ -26,7 +26,9 @@ class UpdateProjectRequest extends FormRequest
         return [
             'name' => 'required|max:50',
             'date_of_upload' => 'required',
-            'stack' => 'required'
+            'stack' => 'required',
+            'description' => 'nullable',
+            'preview' => 'nullable'
         ];
     }
 
