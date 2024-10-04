@@ -32,6 +32,11 @@
                                     <a href="{{route('admin.projects.edit', ['project' => $p->id])}}" class="btn btn-sm btn-warning mx-2">
                                         <i class="bi bi-pencil"></i>
                                     </a>
+                                    <form action="{{ route('admin.projects.destroy', ['project' => $p->id])}}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-sm btn-danger" id="project-remove" data-c-title="{{$p->title}}"><i class="bi bi-trash-fill"></i></button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach
