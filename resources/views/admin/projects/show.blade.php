@@ -4,10 +4,7 @@
     <div class="container my-5">
         <div class="row">
             <div class="col-12">
-               
                     <h1 class="mb-5">Project details</h1>
-                    
-               
             </div>
             <div class="col-6">
                 <img src="{{$project->preview}}" alt="Project {{$project->name}}">
