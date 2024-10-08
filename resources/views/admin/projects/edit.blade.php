@@ -32,6 +32,13 @@
                         @enderror
                         </div>
                         <div class="col-12 col-md-6">
+                            <div class="project-box-img">
+                                @if (Str::startsWith($project->preview, 'https'))
+                                    <img src="{{$project->preview}}" alt="Project {{$project->name}}">
+                                @else
+                                    <img src="{{asset('storage/'.$project->preview)}}" alt="Project {{$project->name}}">
+                                @endif
+                            </div>
                             <label class="form-label" for="preview">Preview URL</label>
                             <input class="form-control @error('preview') is-invalid @enderror" type="file" name="preview">
                             @error('preview')
