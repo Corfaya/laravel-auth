@@ -7,11 +7,13 @@
                     <h1 class="mb-5">Project details</h1>
             </div>
             <div class="col-6">
-                @if (Str::startsWith($project->preview, 'https'))
-                    <img src="{{$project->preview}}" alt="Project {{$project->name}}">
-                @else
-                    <img src="{{asset('storage/'.$project->preview)}}" alt="Project {{$project->name}}">
-                @endif
+                <div class="project-box-img">
+                    @if (Str::startsWith($project->preview, 'https'))
+                        <img src="{{$project->preview}}" alt="Project {{$project->name}}">
+                    @else
+                        <img src="{{asset('storage/'.$project->preview)}}" alt="Project {{$project->name}}">
+                    @endif
+                </div>
             </div>
             <div class="col-6 pe-5">
                <div class="text-end pb-5">
