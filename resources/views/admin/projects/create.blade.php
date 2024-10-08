@@ -4,7 +4,7 @@
     <div class="container my-5">
         <div class="row">
             <div class="col-12">
-                <form method="POST" action="{{route('admin.projects.store')}}">
+                <form method="POST" action="{{route('admin.projects.store')}}" enctype="multipart/form-data">
                     @csrf
                     <div class="row gy-3">
                         <div class="col-12 col-md-6">
@@ -32,7 +32,7 @@
                         </div>
                         <div class="col-12 col-md-6">
                             <label class="form-label" for="preview">Preview URL</label>
-                            <input class="form-control @error('preview') is-invalid @enderror" type="text" value="{{old('preview')}}" placeholder="Url" name="preview">
+                            <input class="form-control @error('preview') is-invalid @enderror" type="file" value="{{old('preview')}}" placeholder="Url" name="preview">
                             @error('preview')
                             <div class="text-danger">{{$message}}</div>
                         @enderror
