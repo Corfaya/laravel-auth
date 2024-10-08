@@ -109,7 +109,7 @@ class ProjectController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(Project $project)
-    {
+    {   
         $project->delete();
         return redirect()->route('admin.projects.index');
     }

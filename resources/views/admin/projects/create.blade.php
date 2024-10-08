@@ -32,7 +32,7 @@
                         </div>
                         <div class="col-12 col-md-6">
                             <label class="form-label" for="preview">Preview URL</label>
-                            <input class="form-control @error('preview') is-invalid @enderror" type="file" value="{{old('preview')}}" placeholder="Url" name="preview">
+                            <input class="form-control @error('preview') is-invalid @enderror" type="file" name="preview">
                             @error('preview')
                             <div class="text-danger">{{$message}}</div>
                         @enderror
