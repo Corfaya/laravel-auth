@@ -8,6 +8,7 @@ use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class ProjectController extends Controller
 {
@@ -87,6 +88,15 @@ class ProjectController extends Controller
     {
         $form_data = $request->validated();
         $form_data['slug'] = Project::generateSlug($form_data['name']);
+
+        if($request->hasFile('preview')) {
+            if(!Str::startsWith($project->preview, 'https')) {
+                Storage::disk('public')->delete($project->preview);
+            }
+            $path = Storage::disk('public')->put('preview', $form_data['preview']);
+            $form_data['preview'] = $path;
+        }
+
         $project->update($form_data);
 
         return redirect()->route('admin.projects.show', compact('project'));
